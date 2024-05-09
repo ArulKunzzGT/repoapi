@@ -1,7 +1,7 @@
 
 const axios = require('axios');
 
-async function scrapeTikTokAPI(url) {
+async function tiktokdl(url) {
   try {
     const response = await axios.get(`https://skizo.tech/api/tiktok?apikey=Alok&url=${url}`);
 
@@ -13,4 +13,4 @@ async function scrapeTikTokAPI(url) {
   }
 }
 
-module.exports = scrapeTikTokAPI;
+module.exports = tiktokdl;
