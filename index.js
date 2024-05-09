@@ -130,6 +130,23 @@ voiceId: ""
 }
 };
 
+app.get('/api/tiktokdl', async (req, res) => {
+  try {
+    const url = req.query.url;
+    if (!url) {
+      return res.status(400).json({ error: 'Parameter "url" tidak ditemukan' });
+    }
+    const response = await ptz.tiktokdl(url);
+    res.status(200).json({
+      status: 200,
+      creator: "siputzx",
+      data: { response }
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 const config = {
 headers: {
 Accept: "application/json, text/plain, */*",
