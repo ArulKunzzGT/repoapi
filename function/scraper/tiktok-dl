@@ -1,0 +1,19 @@
+const axios = require('axios');
+
+async function scrapeTikTokAPI(url) {
+  try {
+    const response = await axios.get(`https://skizo.tech/api/tiktok?apikey=Alok&url=${url}`);
+    
+    // Proses data TikTok yang diperoleh
+    const tiktokData = response.data;
+    
+    // Mengembalikan data dalam format JSON
+    return tiktokData;
+    
+  } catch (error) {
+    // Mengembalikan pesan error jika terjadi kesalahan
+    return { error: 'Terjadi kesalahan dalam memproses data TikTok' };
+  }
+}
+
+module.exports = scrapeTikTokAPI;
