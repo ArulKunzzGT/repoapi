@@ -3,4 +3,5 @@ module.exports = {
 	smartContract: require('./scraper/smartContract'),
 	ragBot: require('./scraper/ragBot'),
 	degreeGuru: require('./scraper/degreeGuru')
+ tiktokdl: require('./scraper/tiktokdl')
 }
