@@ -32,6 +32,19 @@ body {
     font-size: 36px;
     color: #007bff;
     margin-bottom: 20px;
+    background: linear-gradient(90deg, #007bff, #00c3ff, #007bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neonAnimation 1.5s infinite alternate;
+}
+
+@keyframes neonAnimation {
+    from {
+        filter: brightness(150%);
+    }
+    to {
+        filter: brightness(100%);
+    }
 }
 
 .container p {
@@ -43,7 +56,7 @@ body {
 .btn {
     display: inline-block;
     padding: 10px 30px;
-    background-color: #007bff;
+    background: linear-gradient(90deg, #007bff, #00c3ff, #007bff);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -52,7 +65,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background: linear-gradient(90deg, #0056b3, #008ecb, #0056b3);
 }
 
 .features {
@@ -72,12 +85,17 @@ body {
     font-size: 48px;
     color: #007bff;
     margin-right: 10px;
+    animation: neonAnimation 1.5s infinite alternate;
 }
 
 .feature h2 {
     font-size: 24px;
     margin-bottom: 10px;
     color: #007bff;
+    background: linear-gradient(90deg, #007bff, #00c3ff, #007bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neonAnimation 1.5s infinite alternate;
 }
 
 .feature p {
