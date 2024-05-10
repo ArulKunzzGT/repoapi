@@ -171,8 +171,9 @@ app.get("/api/gpt", async (req, res) => {
   }
 });
 
-app.use((req, res, next) => {
-  res.status(404).send("Halaman tidak ditemukan");
+app.use(express.static(path.join(__dirname, 'public')));
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
 app.use((err, req, res, next) => {
