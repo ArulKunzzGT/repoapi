@@ -15,7 +15,7 @@ body {
     background-image: url('https://unsplash.com/photos/mountain-cover-with-snow-oBX-b6ltYts');
     background-size: cover;
     background-position: center;
-    filter: blur(5px);
+    opacity: 0.5; /* Mengatur opacity background */
     z-index: -1;
 }
 
@@ -35,6 +35,7 @@ body {
     background: linear-gradient(90deg, #007bff, #00c3ff, #007bff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
     animation: neonAnimation 1.5s infinite alternate;
 }
 
@@ -84,6 +85,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    animation: neonAnimation 1.5s infinite alternate;
 }
 
 .feature i {
@@ -91,7 +94,6 @@ body {
     color: #007bff;
     margin-right: 10px;
     text-shadow: 0 0 8px #00c3ff;
-    animation: neonAnimation 1.5s infinite alternate;
 }
 
 .feature h2 {
@@ -112,14 +114,4 @@ footer {
     text-align: center;
     padding: 20px 0;
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
-    animation: neonGlow 1.5s infinite alternate;
-}
-
-@keyframes neonGlow {
-    from {
-        text-shadow: 0 0 10px #00c3ff;
-    }
-    to {
-        text-shadow: 0 0 20px #00c3ff, 0 0 30px #00c3ff, 0 0 40px #00c3ff, 0 0 70px #00c3ff;
-    }
 }
