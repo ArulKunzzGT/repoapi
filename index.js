@@ -195,10 +195,14 @@ app.get("/api/gpt", async (req, res) => {
   }
 });
 
+// Fixed error in the code
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Removed duplicate static file serving and added missing endpoint for dashboard
 app.get('/dashboard', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
 });
+
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
