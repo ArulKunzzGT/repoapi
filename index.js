@@ -43,6 +43,17 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Middleware untuk menghitung total hit
+app.use((req, res, next) => {
+    totalHits++;
+    next();
+});
+
+// Endpoint untuk menampilkan total hit
+app.get('/totalhits', (req, res) => {
+    res.send(`Total hits: ${totalHits}`);
+});
+
 // Endpoint untuk ragBot
 app.get('/api/ragbot', async (req, res) => {
   try {
