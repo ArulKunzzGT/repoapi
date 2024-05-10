@@ -39,35 +39,34 @@ app.get('/stats', (req, res) => {
   res.json(stats);
 }); 
 
-let totalHits = 0;
+const filePath = '/path/to/writable/directory/totalHits.json';
+const data = { totalHits: 0 };
 
-// Mengecek apakah file totalHits.json ada, jika tidak maka membuat file baru dengan totalHits: 0
+fs.writeFileSync(filePath, JSON.stringify(data));
+
 if (!fs.existsSync('totalHits.json')) {
     fs.writeFileSync('totalHits.json', JSON.stringify({ totalHits: 0 }));
 } else {
-    // Jika file totalHits.json sudah ada, maka baca totalHits dari file tersebut
     const data = fs.readFileSync('totalHits.json');
     totalHits = JSON.parse(data).totalHits;
 }
 
-// Middleware untuk menghitung total hit
+let totalHits = 0;
+
 app.use((req, res, next) => {
     totalHits++;
     next();
 });
 
-// Endpoint untuk menampilkan total hit
 app.get('/totalhits', (req, res) => {
     res.send({ totalHits: totalHits });
 });
 
-// Menyimpan totalHits ke dalam file totalHits.json setiap kali server dihentikan
 process.on('SIGINT', () => {
     fs.writeFileSync('totalHits.json', JSON.stringify({ totalHits: totalHits }));
     process.exit();
 });
 
-// Endpoint untuk ragBot
 app.get('/api/ragbot', async (req, res) => {
   try {
     const message = req.query.message;
@@ -85,7 +84,6 @@ app.get('/api/ragbot', async (req, res) => {
   }
 });
 
-// Endpoint untuk degreeGuru
 app.get('/api/degreeguru', async (req, res) => {
   try {
     const { message } = req.query;
@@ -103,7 +101,6 @@ app.get('/api/degreeguru', async (req, res) => {
   }
 });
 
-// Endpoint untuk smartContract
 app.get('/api/smartcontract', async (req, res) => {
   try {
     const message = req.query.message;
@@ -121,7 +118,6 @@ app.get('/api/smartcontract', async (req, res) => {
   }
 });
 
-// Endpoint untuk blackboxAIChat
 app.get('/api/blackboxAIChat', async (req, res) => {
   try {
     const message = req.query.message;
@@ -139,7 +135,6 @@ app.get('/api/blackboxAIChat', async (req, res) => {
   }
 });
 
-// Endpoint untuk tiktokdl
 app.get('/api/tiktok', async (req, res) => {
   try {
     const url = req.query.url;
@@ -147,13 +142,10 @@ app.get('/api/tiktok', async (req, res) => {
       return res.status(400).json({ error: 'Parameter "url" diperlukan' });
     }
     
-    // Panggil fungsi tiktokdl dari function/index.js
     const response = await ptz.tiktokdl(url);
     
-    // Mengambil data dari properti data dalam respons
     const responseData = response.data;
     
-    // Mengirimkan data langsung ke client tanpa properti response
     res.status(200).json(responseData);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -195,10 +187,6 @@ app.get("/api/gpt", async (req, res) => {
   }
 });
 
-// Fixed error in the code
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Removed duplicate static file serving and added missing endpoint for dashboard
 app.get('/dashboard', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
 });
@@ -214,4 +202,5 @@ app.use((err, req, res, next) => {
 
 app.listen(port, () => {
   console.log(`Server berjalan di http://localhost:${port}`);
+});
 });
