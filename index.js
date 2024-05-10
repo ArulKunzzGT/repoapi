@@ -126,12 +126,11 @@ app.get('/api/tiktok', async (req, res) => {
     // Panggil fungsi tiktokdl dari function/index.js
     const response = await ptz.tiktokdl(url);
     
-    // Kirim respons ke client
-    res.status(200).json({
-      status: 200,
-      creator: "siputzx",
-      data: { response }
-    });
+    // Mengambil data dari properti data dalam respons
+    const responseData = response.data;
+    
+    // Mengirimkan data langsung ke client tanpa properti response
+    res.status(200).json(responseData);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
