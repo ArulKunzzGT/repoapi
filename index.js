@@ -51,7 +51,7 @@ app.use((req, res, next) => {
 
 // Endpoint untuk menampilkan total hit
 app.get('/totalhits', (req, res) => {
-    res.send(`Total hits: ${totalHits}`);
+    res.send({ totalHits: totalHits });
 });
 
 // Endpoint untuk ragBot
