@@ -37,7 +37,8 @@ app.get('/stats', (req, res) => {
     memoryUsage: process.memoryUsage()
   };
   res.json(stats);
-});
+}); 
+let totalHits = 0;
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
