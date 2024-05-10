@@ -74,6 +74,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     margin-top: 50px;
+    margin-bottom: 20px; /* Menambahkan margin-bottom untuk memberi ruang di bagian bawah blok fitur */
 }
 
 .feature {
