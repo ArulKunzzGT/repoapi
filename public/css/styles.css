@@ -32,7 +32,19 @@ body {
     font-size: 36px;
     color: #007bff;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px #00b7ff; /* Efek bayangan neon */
+    background: linear-gradient(90deg, #007bff, #00c3ff, #007bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neonAnimation 1.5s infinite alternate;
+}
+
+@keyframes neonAnimation {
+    from {
+        filter: brightness(150%);
+    }
+    to {
+        filter: brightness(100%);
+    }
 }
 
 .container p {
@@ -44,17 +56,17 @@ body {
 .btn {
     display: inline-block;
     padding: 10px 30px;
-    background-color: #007bff;
+    background: linear-gradient(90deg, #007bff, #00c3ff, #007bff);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
     transition: background-color 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Efek bayangan neon */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background: linear-gradient(90deg, #0056b3, #008ecb, #0056b3);
 }
 
 .features {
@@ -78,14 +90,15 @@ body {
     font-size: 48px;
     color: #007bff;
     margin-right: 10px;
-    text-shadow: 0 0 10px #00b7ff; /* Efek bayangan neon */
+    text-shadow: 0 0 8px #00c3ff;
+    animation: neonAnimation 1.5s infinite alternate;
 }
 
 .feature h2 {
     font-size: 24px;
     margin-bottom: 10px;
     color: #007bff;
-    text-shadow: 0 0 10px #00b7ff; /* Efek bayangan neon */
+    text-shadow: 0 0 8px #00c3ff;
 }
 
 .feature p {
@@ -97,19 +110,16 @@ footer {
     background-color: #343a40;
     color: #fff;
     text-align: center;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
     padding: 20px 0;
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan neon */
-    animation: neon-glow 1.5s infinite alternate;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+    animation: neonGlow 1.5s infinite alternate;
 }
 
-@keyframes neon-glow {
+@keyframes neonGlow {
     from {
-        text-shadow: 0 0 10px #00b7ff;
+        text-shadow: 0 0 10px #00c3ff;
     }
     to {
-        text-shadow: 0 0 20px #00b7ff, 0 0 30px #00b7ff, 0 0 40px #00b7ff, 0 0 70px #00b7ff;
+        text-shadow: 0 0 20px #00c3ff, 0 0 30px #00c3ff, 0 0 40px #00c3ff, 0 0 70px #00c3ff;
     }
 }
