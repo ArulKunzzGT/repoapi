@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    overflow: hidden; /* Menghindari efek blur keluar dari konten */
-    position: relative; /* Menambahkan posisi relatif untuk konten */
+    overflow: auto; /* Mengizinkan konten untuk di-scroll */
+    position: relative;
 }
 
 .background-layer {
@@ -15,15 +15,17 @@ body {
     background-image: url('https://unsplash.com/photos/mountain-cover-with-snow-oBX-b6ltYts');
     background-size: cover;
     background-position: center;
-    filter: blur(5px); /* Menambahkan blur sebesar 5px */
-    z-index: -1; /* Menetapkan indeks z untuk lapisan belakang agar berada di belakang konten */
+    filter: blur(5px);
+    z-index: -1;
 }
 
 .container {
     text-align: center;
     margin-top: 150px;
-    position: relative; /* Menambahkan posisi relatif untuk konten */
-    z-index: 1; /* Menetapkan indeks z untuk konten agar muncul di depan background */
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8); /* Menambahkan transparansi pada konten */
+    padding: 20px; /* Tambahkan padding pada konten */
 }
 
 .container h1 {
@@ -52,38 +54,6 @@ body {
 .btn:hover {
     background-color: #0056b3;
 }
-/* Kode CSS Anda sebelumnya di sini */
-
-.container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.feature {
-    margin-top: 50px;
-}
-
-.feature i {
-    font-size: 48px;
-    color: #007bff;
-}
-
-.feature h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #007bff;
-}
-
-.feature p {
-    font-size: 18px;
-    color: #333;
-}
-/* Kode CSS Anda sebelumnya di sini */
-
-.container {
-    text-align: center;
-    margin-top: 50px;
-}
 
 .features {
     display: flex;
@@ -116,55 +86,8 @@ body {
 }
 
 footer {
-    margin-top: 50px;
-}
-
-footer p {
-    font-size: 14px;
-    color: #555;
-}
-/* Kode CSS Anda sebelumnya di sini */
-
-.container {
+    background-color: #343a40;
+    color: #fff;
     text-align: center;
-    margin-top: 50px;
-    background-color: #f8f9fa; /* Warna latar belakang konten utama */
-    padding-bottom: 50px; /* Tambahkan padding-bottom untuk memberi ruang di bagian bawah */
-}
-
-.features {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 50px;
-}
-
-.feature {
-    display: flex;
-    align-items: center;
-    margin-right: 30px;
-}
-
-.feature i {
-    font-size: 48px;
-    color: #007bff;
-    margin-right: 10px;
-}
-
-.feature h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #007bff;
-}
-
-.feature p {
-    font-size: 18px;
-    color: #333;
-}
-
-footer {
-    background-color: #343a40; /* Warna latar belakang footer */
-    color: #fff; /* Warna teks footer */
-    text-align: center;
-    padding: 20px 0; /* Tambahkan padding atas dan bawah untuk memberi ruang di sekitar teks */
+    padding: 20px 0;
 }
