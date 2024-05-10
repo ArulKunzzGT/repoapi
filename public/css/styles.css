@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -15,7 +16,7 @@ body {
     background-image: url('https://unsplash.com/photos/mountain-cover-with-snow-oBX-b6ltYts');
     background-size: cover;
     background-position: center;
-    opacity: 0.5; /* Mengatur opacity background */
+    opacity: 0.5;
     z-index: -1;
 }
 
@@ -35,7 +36,6 @@ body {
     background: linear-gradient(90deg, #007bff, #00c3ff, #007bff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     animation: neonAnimation 1.5s infinite alternate;
 }
 
@@ -85,8 +85,6 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    animation: neonAnimation 1.5s infinite alternate;
 }
 
 .feature i {
@@ -114,4 +112,7 @@ footer {
     text-align: center;
     padding: 20px 0;
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
