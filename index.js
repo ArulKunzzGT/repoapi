@@ -38,11 +38,17 @@ app.get('/stats', (req, res) => {
   };
   res.json(stats);
 }); 
+
 let totalHits = 0;
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+// Mengecek apakah file totalHits.json ada, jika tidak maka membuat file baru dengan totalHits: 0
+if (!fs.existsSync('totalHits.json')) {
+    fs.writeFileSync('totalHits.json', JSON.stringify({ totalHits: 0 }));
+} else {
+    // Jika file totalHits.json sudah ada, maka baca totalHits dari file tersebut
+    const data = fs.readFileSync('totalHits.json');
+    totalHits = JSON.parse(data).totalHits;
+}
 
 // Middleware untuk menghitung total hit
 app.use((req, res, next) => {
@@ -53,6 +59,12 @@ app.use((req, res, next) => {
 // Endpoint untuk menampilkan total hit
 app.get('/totalhits', (req, res) => {
     res.send({ totalHits: totalHits });
+});
+
+// Menyimpan totalHits ke dalam file totalHits.json setiap kali server dihentikan
+process.on('SIGINT', () => {
+    fs.writeFileSync('totalHits.json', JSON.stringify({ totalHits: totalHits }));
+    process.exit();
 });
 
 // Endpoint untuk ragBot
