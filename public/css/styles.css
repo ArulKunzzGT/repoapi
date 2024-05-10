@@ -32,19 +32,6 @@ body {
     font-size: 36px;
     color: #007bff;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #007bff, #00c3ff, #007bff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: neonAnimation 1.5s infinite alternate;
-}
-
-@keyframes neonAnimation {
-    from {
-        filter: brightness(150%);
-    }
-    to {
-        filter: brightness(100%);
-    }
 }
 
 .container p {
@@ -56,7 +43,7 @@ body {
 .btn {
     display: inline-block;
     padding: 10px 30px;
-    background: linear-gradient(90deg, #007bff, #00c3ff, #007bff);
+    background-color: #007bff;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -65,7 +52,7 @@ body {
 }
 
 .btn:hover {
-    background: linear-gradient(90deg, #0056b3, #008ecb, #0056b3);
+    background-color: #0056b3;
 }
 
 .features {
@@ -79,23 +66,22 @@ body {
     display: flex;
     align-items: center;
     margin-right: 30px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .feature i {
     font-size: 48px;
     color: #007bff;
     margin-right: 10px;
-    animation: neonAnimation 1.5s infinite alternate;
 }
 
 .feature h2 {
     font-size: 24px;
     margin-bottom: 10px;
     color: #007bff;
-    background: linear-gradient(90deg, #007bff, #00c3ff, #007bff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: neonAnimation 1.5s infinite alternate;
 }
 
 .feature p {
@@ -107,5 +93,8 @@ footer {
     background-color: #343a40;
     color: #fff;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
     padding: 20px 0;
 }
