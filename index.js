@@ -6,6 +6,7 @@ const os = require('os');
 const fs = require('fs');
 const ptz = require('./function/index');
 const axios = require('axios');
+const creator = "Evannt";
 
 var app = express();
 app.enable("trust proxy");
@@ -39,6 +40,7 @@ app.get('/stats', (req, res) => {
   res.json(stats);
 });
 
+// Endpoint untuk halaman default
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
@@ -53,7 +55,7 @@ app.get('/api/ragbot', async (req, res) => {
     const response = await ptz.ragBot(message);
     res.status(200).json({
       status: 200,
-      creator: "siputzx",
+      creator: `${creator}`,
       data: { response }
     });
   } catch (error) {
@@ -71,7 +73,7 @@ app.get('/api/degreeguru', async (req, res) => {
     const response = await ptz.degreeGuru(message);
     res.status(200).json({
       status: 200,
-      creator: "siputzx",
+      creator: `${creator}`,
       data: { response }
     });
   } catch (error) {
@@ -89,7 +91,7 @@ app.get('/api/smartcontract', async (req, res) => {
     const response = await ptz.smartContract(message);
     res.status(200).json({
       status: 200,
-      creator: "siputzx",
+      creator: `${creator}`,
       data: { response }
     });
   } catch (error) {
@@ -107,7 +109,7 @@ app.get('/api/blackboxAIChat', async (req, res) => {
     const response = await ptz.blackboxAIChat(message);
     res.status(200).json({
       status: 200,
-      creator: "siputzx",
+      creator: `${creator}`,
       data: { response }
     });
   } catch (error) {
@@ -172,8 +174,8 @@ app.get("/api/gpt", async (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('/dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+app.get('/docs', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'docs.html'));
 });
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
