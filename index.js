@@ -1,3 +1,4 @@
+
 var express = require("express");
 var cors = require("cors");
 var secure = require("ssl-express-www");
@@ -124,14 +125,8 @@ app.get('/api/tiktok', async (req, res) => {
     if (!url) {
       return res.status(400).json({ error: 'Parameter "url" diperlukan' });
     }
-    
-    // Panggil fungsi tiktokdl dari function/index.js
     const response = await ptz.tiktokdl(url);
-    
-    // Mengambil data dari properti data dalam respons
     const responseData = response.data;
-    
-    // Mengirimkan data langsung ke client tanpa properti response
     res.status(200).json(responseData);
   } catch (error) {
     res.status(500).json({ error: error.message });
