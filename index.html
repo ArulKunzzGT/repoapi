@@ -4,23 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Evannt API</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <style>
   /* CSS untuk layout dan tampilan */
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Mengubah font */
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    color: #000;
+    background-color: #f4f4f4; /* Warna latar belakang */
+    color: #333; /* Warna teks */
   }
   header, footer {
-    background-color: #0056b3;
+    background-color: #34495e; /* Warna header dan footer */
     color: #fff;
     padding: 20px;
     text-align: center;
   }
   .container {
-    max-width: 800px;
+    max-width: 960px; /* Lebar maksimal */
     margin: 0 auto;
     padding: 20px;
   }
@@ -29,7 +30,7 @@
     text-align: center;
   }
   .call-to-action button {
-    background-color: #00c3ff;
+    background-color: #3498db; /* Warna tombol */
     border: none;
     padding: 15px 30px;
     font-size: 18px;
@@ -38,7 +39,7 @@
     transition: background-color 0.3s ease;
   }
   .call-to-action button:hover {
-    background-color: #007bff;
+    background-color: #2980b9; /* Warna tombol saat dihover */
   }
   .features {
     display: flex;
@@ -49,6 +50,12 @@
     text-align: center;
     padding: 20px;
     flex: 1;
+    background-color: #ecf0f1; /* Warna kotak blok untuk feature */
+    border-radius: 5px;
+  }
+  .feature img {
+    max-width: 100px;
+    margin-bottom: 10px;
   }
   .footer-links {
     display: flex;
@@ -59,6 +66,11 @@
     color: #fff;
     margin: 0 10px;
     text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    .features {
+      flex-direction: column;
+    }
   }
 </style>
 </head>
@@ -73,12 +85,12 @@
   </div>
   <div class="features">
     <div class="feature">
-      <img src="gem-icon.png" alt="Gem Icon">
+      <i class="fas fa-gem"></i>
       <h3>Many and Free</h3>
       <p>Access a wide range of features for free!</p>
     </div>
     <div class="feature">
-      <img src="server-icon.png" alt="Server Icon">
+      <i class="fas fa-server"></i>
       <h3>Powerful Server</h3>
       <p>Utilize our powerful servers for seamless integration.</p>
     </div>
@@ -86,10 +98,9 @@
 </div>
 <footer>
   <div class="footer-links">
-    <a href="#">Copyright</a>
-    <a href="#">Developer Rights</a>
-    <a href="#">Terms of Service</a>
-    <!-- tambahkan ikon media sosial di sini jika diperlukan -->
+    <a href="#"><i class="fas fa-copy"></i> Copyright</a>
+    <a href="#"><i class="fas fa-user-shield"></i> Developer Rights</a>
+    <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
     <a href="#"><i class="fab fa-facebook"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -98,13 +109,25 @@
 <script>
   // JavaScript untuk responsif
   window.addEventListener('resize', function() {
+    const features = document.querySelector('.features');
+    const callToAction = document.querySelector('.call-to-action button');
+
     if (window.innerWidth < 768) {
-      // Misalnya, atur sesuatu untuk tampilan seluler
-      // Anda dapat mengubah CSS atau tata letak HTML di sini
+      // Atur tampilan untuk seluler
+      features.style.flexDirection = 'column';
+      callToAction.style.padding = '10px 20px';
+      callToAction.style.fontSize = '16px';
     } else {
-      // Misalnya, atur sesuatu untuk tampilan desktop
+      // Atur tampilan untuk desktop
+      features.style.flexDirection = 'row';
+      callToAction.style.padding = '15px 30px';
+      callToAction.style.fontSize = '18px';
     }
   });
+
+  // Panggil fungsi resize saat halaman dimuat untuk mengatur tampilan awal
+  window.dispatchEvent(new Event('resize'));
 </script>
 </body>
+</html>
 </html>
