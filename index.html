@@ -24,7 +24,7 @@
     height: 100%;
     z-index: -1;
   }
-  header, footer {
+  header {
     background-color: #2c3e50;
     color: #fff;
     padding: 20px;
@@ -42,18 +42,17 @@
     margin-top: 50px;
   }
   .call-to-action button {
-    background-color: #3498db;
+    background-color: #16a085; /* Warna baru */
     border: none;
     padding: 15px 30px;
     font-size: 18px;
     color: #ffffff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Menambahkan bayangan teks */
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease;
   }
   .call-to-action button:hover {
-    background-color: #2980b9;
-    color: #dfe6e9; /* Perubahan warna teks saat hover */
+    background-color: #1abc9c; /* Warna hover baru */
+    transform: scale(1.1); /* Animasi zoom saat hover */
   }
   .features {
     display: flex;
@@ -62,49 +61,34 @@
   }
   .feature {
     text-align: center;
-    padding: 30px; /* Menambah padding */
-    margin: 20px; /* Menambah margin */
+    padding: 30px;
+    margin: 20px;
     flex: 1;
     background-color: #ecf0f1;
     border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .feature:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   }
   .feature i {
-    margin-bottom: 10px; /* Menambahkan jarak antara ikon dan teks */
-    display: block; /* Membuat ikon menjadi block untuk memungkinkan margin */
+    margin-bottom: 10px;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    font-size: 24px; /* Meningkatkan ukuran ikon */
-    transition: color 0.3s ease; /* Transisi warna ikon */
+    font-size: 24px;
+    transition: color 0.3s ease;
   }
   .feature i:hover {
-    color: #3498db; /* Perubahan warna ikon saat hover */
+    color: #16a085; /* Warna ikon saat hover */
   }
-  footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-  }
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-  }
-  .footer-links a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s ease; /* Transisi warna link */
-  }
-  .footer-links a:hover {
-    color: #3498db; /* Perubahan warna link saat hover */
+  h1 {
+    color: #16a085; /* Warna baru untuk judul */
+    font-weight: bold;
+    text-transform: uppercase; /* Membuat teks judul menjadi kapital */
   }
   @media (max-width: 1024px) {
-    .container, header, footer {
+    .container, header {
       padding: 15px;
     }
     .call-to-action button {
@@ -142,25 +126,6 @@
       margin-bottom: 20px;  /* Tambahkan margin untuk memisahkan kartu */
     }
   }
-  @media (max-width: 480px) {
-    header, footer {
-      padding: 10px;
-    }
-    .features .feature {
-      padding: 10px;
-    }
-  }
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
 </style>
 </head>
 <body>
@@ -196,16 +161,6 @@
     </div>
   </div>
 </div>
-<footer>
-  <div class="footer-links">
-    <a href="#"><i class="fas fa-copy"></i> Copyright</a>
-    <a href="#"><i class="fas fa-user-shield"></i> Developer Rights</a>
-    <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-  </div>
-</footer>
 <script>
   window.addEventListener('scroll', function() {
     const features = document.querySelectorAll('.feature');
