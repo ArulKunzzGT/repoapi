@@ -5,18 +5,18 @@ Chart.defaults.global.defaultFontColor = '#858796';
 function number_format(number, decimals, dec_point, thousands_sep) {
   // *     example: number_format(1234.56, 2, ',', ' ');
   // *     return: '1 234,56'
-  number = (number + '').replace(',', '').replace(' ', '');
-  var n = !isFinite(+number) ? 0 : +number,
-    prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+  number = (String(number)).replace(',', '').replace(' ', '');
+  var n = !isFinite(Number(number)) ? 0 : Number(number),
+    prec = !isFinite(Number(decimals)) ? 0 : Math.abs(decimals),
     sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
     dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
     s = '',
     toFixedFix = function(n, prec) {
       var k = Math.pow(10, prec);
-      return '' + Math.round(n * k) / k;
+      return String(Math.round(n * k) / k);
     };
   // Fix for IE parseFloat(0.55).toFixed(0) = 0;
-  s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+  s = (prec ? toFixedFix(n, prec) : String(Math.round(n))).split('.');
   if (s[0].length > 3) {
     s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
   }
