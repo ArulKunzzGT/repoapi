@@ -15,7 +15,7 @@
     font-family: 'Nunito', sans-serif;
   }
   .background {
-    background-image: url('https://i.pinimg.com/originals/34/4c/31/344c31af24decce0b5d448cc5d00c1ef.jpg'); /* URL gambar yang benar */
+    background-image: url('https://i.pinimg.com/originals/34/4c/31/344c31af24decce0b5d448cc5d00c1ef.jpg');
     background-size: cover;
     background-position: center;
     position: fixed;
@@ -34,10 +34,10 @@
     margin: 0 auto;
     padding: 20px;
     position: relative;
-    z-index: 1; /* Pastikan konten di atas background */
+    z-index: 1;
   }
   .call-to-action {
-    text-align: center; /* Menengahkan tombol */
+    text-align: center;
     margin-top: 50px;
   }
   .call-to-action button {
@@ -48,7 +48,7 @@
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
-    animation: pulse 2s infinite; /* Animasi tambahan */
+    animation: pulse 2s infinite;
   }
   .call-to-action button:hover {
     background-color: #2980b9;
@@ -69,7 +69,7 @@
   footer {
     position: absolute;
     width: 100%;
-    bottom: 0; /* Footer di bawah */
+    bottom: 0;
   }
   .footer-links {
     display: flex;
@@ -81,9 +81,30 @@
     margin: 0 10px;
     text-decoration: none;
   }
+  @media (max-width: 1024px) {
+    .container, header, footer {
+      padding: 15px;
+    }
+    .call-to-action button {
+      padding: 12px 25px;
+      font-size: 16px;
+    }
+  }
   @media (max-width: 768px) {
     .features {
       flex-direction: column;
+    }
+    .call-to-action button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 480px) {
+    header, footer {
+      padding: 10px;
+    }
+    .features .feature {
+      padding: 10px;
     }
   }
   @keyframes pulse {
