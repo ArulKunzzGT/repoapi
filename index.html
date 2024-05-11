@@ -5,41 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Evannt API</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* CSS untuk layout dan tampilan */
   body {
-    font-family: 'Arial', sans-serif; /* Mengubah font */
+    font-family: 'Nunito', sans-serif; /* Font yang lebih estetik */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Warna latar belakang */
+    background-image: url('https://unsplash.com/photos/mountain-cover-with-snow-oBX-b6ltYts');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Efek blur pada background */
     color: #333; /* Warna teks */
   }
   header, footer {
-    background-color: #34495e; /* Warna header dan footer */
+    background-color: #2c3e50; /* Biru tua */
     color: #fff;
     padding: 20px;
     text-align: center;
   }
   .container {
-    max-width: 960px; /* Lebar maksimal */
+    max-width: 960px;
     margin: 0 auto;
     padding: 20px;
-  }
-  .call-to-action {
-    margin-top: 50px;
-    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Latar belakang transparan untuk konten */
   }
   .call-to-action button {
-    background-color: #3498db; /* Warna tombol */
+    background-color: #3498db; /* Biru terang */
     border: none;
     padding: 15px 30px;
     font-size: 18px;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
   }
   .call-to-action button:hover {
-    background-color: #2980b9; /* Warna tombol saat dihover */
+    background-color: #2980b9; /* Biru tua saat dihover */
+    transform: scale(1.05); /* Animasi membesar */
   }
   .features {
     display: flex;
@@ -50,12 +52,8 @@
     text-align: center;
     padding: 20px;
     flex: 1;
-    background-color: #ecf0f1; /* Warna kotak blok untuk feature */
+    background-color: #ecf0f1; /* Abu-abu muda */
     border-radius: 5px;
-  }
-  .feature img {
-    max-width: 100px;
-    margin-bottom: 10px;
   }
   .footer-links {
     display: flex;
