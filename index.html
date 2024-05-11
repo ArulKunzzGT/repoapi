@@ -8,10 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* CSS untuk layout dan tampilan */
-  body, html {
+  html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
     font-family: 'Nunito', sans-serif;
   }
   .background {
@@ -65,6 +66,10 @@
     flex: 1;
     background-color: #ecf0f1;
     border-radius: 5px;
+  }
+  .feature i {
+    margin-bottom: 10px; /* Menambahkan jarak antara ikon dan teks */
+    display: block; /* Membuat ikon menjadi block untuk memungkinkan margin */
   }
   footer {
     position: absolute;
