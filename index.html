@@ -25,10 +25,11 @@
     z-index: -1;
   }
   header {
-    background-color: #34495e; /* Warna gelap baru untuk header */
-    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8); /* Warna putih dengan sedikit transparansi */
+    color: #333; /* Warna teks gelap untuk kontras */
     padding: 20px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bayangan ringan untuk kedalaman */
   }
   .container {
     max-width: 960px;
@@ -102,26 +103,8 @@
       padding: 10px 20px;
       font-size: 14px;
     }
-    .menu-hamburger {
-      display: block; /* Menampilkan menu hamburger pada tampilan mobile */
-    }
-    .menu-hamburger .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-    .menu-hamburger .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-    }
-    .feature {
-      margin-bottom: 20px;  /* Tambahkan margin untuk memisahkan kartu */
+    .menu-hamburger .hamburger {
+        display: block;
     }
   }
   @media (max-width: 480px) {
@@ -143,6 +126,39 @@
       transform: scale(1);
     }
   }
+  .menu-hamburger {
+    position: relative; /* Posisi relatif untuk konten dropdown */
+    display: inline-block; /* Tampilan inline-block untuk penyesuaian layout */
+  }
+
+  .hamburger {
+    background-color: transparent; /* Latar belakang transparan */
+    border: none; /* Hapus border */
+    color: #333; /* Warna ikon hamburger */
+    font-size: 24px; /* Ukuran ikon hamburger */
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none; /* Sembunyikan dropdown secara default */
+    position: absolute;
+    background-color: #fff; /* Latar belakang putih */
+    min-width: 160px; /* Lebar minimum */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Bayangan untuk dropdown */
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1; /* Warna hover untuk link */
+  }
 </style>
 </head>
 <body>
@@ -155,9 +171,9 @@
   <div class="menu-hamburger">
     <button class="hamburger" onclick="toggleMenu()">☰</button>
     <div class="dropdown-content" id="myDropdown">
-      <a href="/docs">Home</a>
-      <a href="/docs">Services</a>
-      <a href="/docs">Arul CoolBoy</a>
+      <a href="/home">Home</a>
+      <a href="/services">Services</a>
+      <a href="/contact">Contact</a>
     </div>
   </div>
 </header>
